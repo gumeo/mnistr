@@ -1,0 +1,17 @@
+Package: mnistr
+Type: Package
+Title: Utility Functions for MNIST Dataset
+Version: 0.0.0.9000
+Authors@R: person("Gudmundur", "Einarsson", email = "gumeo140688@gmail.com", role = c("aut", "cre"))
+Description: This package provides functions to download, load and plot the
+    mnist dataset in R. The goal is to aggregate good functions for working with
+    this dataset in one package to ease the workflow for people that are new to
+    working with image data in R. Some examples are given on how one can perform
+    classification on this dataset and estimate performance.
+License: CC0
+LazyData: TRUE
+Imports:
+    caret,
+    ggplot2,
+    R.utils
+RoxygenNote: 5.0.1
