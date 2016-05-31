@@ -20,7 +20,7 @@
 #' dat <- matrix(sample(0:255,784),nrow = 1)
 #' # Get the ggplot object
 #' myRandomNonDigit <- ggDigit(dat)
-#' \donrun{
+#' \dontrun{
 #' # Display the digit
 #' (myRandomNonDigit)
 #' }

@@ -6,7 +6,8 @@
 #' downloads the dataset and unzips it. Use the function \code{\link{load_mnist}}
 #' afterwards to load the dataset into the workspace. The dataset is downloaded
 #' from \url{http://yann.lecun.com/exdb/mnist/}. Check out the webpage for
-#' performance of various classifiers.
+#' performance of various classifiers. It may depend on your platform whether
+#' the dataset is successfully unzipped.
 #'
 #' @param where Path to where the dataset should be saved. Default is current
 #'   working directory.
