@@ -35,4 +35,3 @@ trainSet$n
 (ggDigit(trainSet$x[sample(1:trainSet$n,1),]))
 }
 }
-

@@ -21,7 +21,8 @@ The function creates the \code{mnist} directory in the specified directory \code
 downloads the dataset and unzips it. Use the function \code{\link{load_mnist}}
 afterwards to load the dataset into the workspace. The dataset is downloaded
 from \url{http://yann.lecun.com/exdb/mnist/}. Check out the webpage for
-performance of various classifiers.
+performance of various classifiers. It may depend on your platform whether
+the dataset is successfully unzipped.
 }
 \examples{
 
@@ -30,4 +31,3 @@ download_mnist('somePathToStore/')
 load_mnist('samePathAsAbove/')
 }
 }
-
