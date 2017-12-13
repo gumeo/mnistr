@@ -39,10 +39,10 @@ download_mnist <- function(where = "./"){
   download.file('http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz',
                 destfile = testLabs)
   # Unzip the downloaded files
-  gunzip(trainImgs)
-  gunzip(trainLabs)
-  gunzip(testImgs)
-  gunzip(testLabs)
+  unzip(trainImgs)
+  unzip(trainLabs)
+  unzip(testImgs)
+  unzip(testLabs)
   print(paste('Mnist dataset has been downloaded to: ', where))
   return(TRUE)
 }
