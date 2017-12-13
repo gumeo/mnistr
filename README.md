@@ -5,10 +5,9 @@ This package serves the purpose of making it easy to get started with the mnist 
 - Download mnist from R
 - Load mnist from R
 - Basic plotting functions for digits
-- Other interesting plotting functions
+- Simple neural network to train and visualize results
 
-I plan on releasing some R notebooks as tutorials on how to do some basic ML on the mnist data set in R, and use this package to do some simple visualizations.
+If the download function cannot unzip the data, then you have to do it manually.
 
-I am uncertain if the dataset can be wrapped into a package, that's why the download solution is being used now. I intent to inspect further whether I can add the data set directly to the package.
+If there is any relevant content for this package, I am more likely to put it on my [blog](gumeo.github.io). I'll post a link of relevant links to blogposts here below.
 
-I'll keep this *README* updated with the progress.
