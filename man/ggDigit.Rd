@@ -8,7 +8,8 @@ ggDigit(digit, trueLab, predLab)
 }
 \arguments{
 \item{digit}{A single row from the mnist dataset, i.e. a
-1 by 784 vector. This can e.g. be \code{trainSet$x[1,]}.}
+1 by 784 vector. This can e.g. be the first digit from the
+mnist dataset \code{trainSet$x[1,]}.}
 
 \item{trueLab}{The true label of the digit. Can be a factor or character.}
 
