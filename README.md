@@ -9,5 +9,17 @@ This package serves the purpose of making it easy to get started with the mnist 
 
 If the download function cannot unzip the data, then you have to do it manually.
 
+## Installation
+
+I might submit the package to CRAN later, until then, install with:
+
+```
+devtools::install_github('gumeo/mnistr')
+```
+
+## How to use?
+
 If there is any relevant content for this package, I am more likely to put it on my [blog](gumeo.github.io). I'll post a link of relevant links to blogposts here below.
+
+In particular checkout [this post](https://gumeo.github.io/post/part-2-deep-learning-with-closures-in-r/)!
 
