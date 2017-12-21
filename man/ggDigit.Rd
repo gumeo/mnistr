@@ -30,7 +30,7 @@ title with the digit label and a predicted label.
 }
 \examples{
 # Create some random data to plot
-dat <- matrix(sample(0:255,784),nrow = 1)
+dat <- matrix(sample(0:255,784,replace=TRUE),nrow = 1)
 # Get the ggplot object
 myRandomNonDigit <- ggDigit(dat)
 \dontrun{

@@ -1,7 +1,7 @@
 #' Convert factor to a dummy/indicator matrix
 #'
 #' \code{class.ind} take a factor vector of length $n$ with $k$ levels and
-#'                  outputs an $n\times k$ indicator matrix.  
+#'                  outputs an $n$ x $k$ indicator matrix.  
 #'
 #' @param cl factor vector
 #'
@@ -40,6 +40,8 @@ class.ind <- function(cl) {
 #' sigmoid(0)
 #' sigmoid(5)
 #' sigmoid(0,deriv=TRUE)
+#' 
+#' @export
 sigmoid <- function(X,deriv=FALSE){
   if(deriv==FALSE){
     return(1/(1+exp(-X)))
@@ -67,6 +69,8 @@ sigmoid <- function(X,deriv=FALSE){
 #' reLU(0)
 #' reLU(5)
 #' reLU(1,deriv=TRUE)
+#' 
+#' @export
 reLU <- function(X,deriv=FALSE){
   if(deriv==FALSE){
     X[X<0] <- 0 
@@ -92,6 +96,8 @@ reLU <- function(X,deriv=FALSE){
 #' @examples
 #' softmax(matrix(1:10,5,2))
 #' softmax(matrix(1:10,2,5))
+#' 
+#' @export
 softmax <- function(X){
   Z <- rowSums(exp(X))
   X <- exp(t(X))%*%diag(1/Z)
@@ -113,11 +119,12 @@ softmax <- function(X){
 #' @examples
 #' testFun <- matrixInLayer(TRUE,10,10,TRUE,10)
 #'
+#' @export
 #' @keywords internal
 matrixInLayer <- function(init = FALSE, rS, cS, initPos = FALSE, initScale = 100){
   intMat <- matrix(0, nrow=rS, ncol=cS)
   if(init == TRUE){
-    intMat <- matrix(rnorm(rS*cS)/initScale,nrow = rS,ncol = cS)
+    intMat <- matrix(stats::rnorm(rS*cS)/initScale,nrow = rS,ncol = cS)
     if(initPos == TRUE){
       intMat <- abs(intMat)
     }
@@ -154,6 +161,8 @@ matrixInLayer <- function(init = FALSE, rS, cS, initPos = FALSE, initScale = 100
 #' @examples
 #' testLayer <- Layer(mnistr::reLU, 3, c(10,10),FALSE,FALSE,TRUE,1000)
 #' testLayer$W$getter() # Check random weights
+#' @export
+#' @keywords internal
 Layer <- function(activation, minibatchSize,sizeP,is_input=FALSE,is_output=FALSE, initPos, initScale){
   # Matrix holding the output values
   Z <- matrixInLayer(FALSE,minibatchSize,sizeP[1])
@@ -218,6 +227,7 @@ Layer <- function(activation, minibatchSize,sizeP,is_input=FALSE,is_output=FALSE
 #' @examples
 #' testMLP <- mlp(c(10,10,10),5,mnistr::reLU,TRUE,1000)
 #' testLayer$W$getter() # Check random weights
+#' @export
 mlp <- function(structNet, minibatchSize,activation, initPos =FALSE, initScale=100){
   num_layers <- length(structNet)
   #Create the network

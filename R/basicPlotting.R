@@ -18,7 +18,7 @@
 #'
 #' @examples
 #' # Create some random data to plot
-#' dat <- matrix(sample(0:255,784),nrow = 1)
+#' dat <- matrix(sample(0:255,784,replace=TRUE),nrow = 1)
 #' # Get the ggplot object
 #' myRandomNonDigit <- ggDigit(dat)
 #' \dontrun{
@@ -29,15 +29,15 @@
 #' @export
 ggDigit <- function(digit, trueLab, predLab){
   pDig <- data.frame(value = as.numeric(t(digit)), xVar = rep(1:28,28), yVar = -rep(1:28,each=28)+28)
-  ggRet <- ggplot2::ggplot(data = pDig, aes(x=xVar, y=yVar, fill=value)) +
-    geom_tile(color = "white")+
-    ggplot2::cale_fill_gradient2(low = "white", high = "black", mid = "gray",
+  ggRet <- ggplot2::ggplot(data = pDig, ggplot2::aes(x=xVar, y=yVar, fill=value)) +
+    ggplot2::geom_tile(color = "white")+
+    ggplot2::scale_fill_gradient2(low = "white", high = "black", mid = "gray",
                          midpoint = max(pDig$value)/2, limit = c(min(pDig$value),max(pDig$value)),
                          space = "Lab", guide = FALSE) +
     ggplot2::theme_minimal()+
     ggplot2::coord_fixed() + ggplot2::xlab("") + ggplot2::ylab("") +
-    ggplot2::theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-          axis.text.x = element_blank(),axis.text.y = element_blank())
+    ggplot2::theme(panel.grid.major = ggplot2::element_blank(), panel.grid.minor = ggplot2::element_blank(),
+          axis.text.x = ggplot2::element_blank(),axis.text.y = ggplot2::element_blank())
   if(missing(trueLab) & missing(predLab)){
     return(ggRet)
   }else if(missing(predLab)){

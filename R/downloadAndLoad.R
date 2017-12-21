@@ -27,16 +27,16 @@ download_mnist <- function(where = "./"){
   dir.create(where)
   # Download the files
   trainImgs <- paste(where,'/train-images-idx3-ubyte.gz',sep='')
-  download.file('http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz',
+  utils::download.file('http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz',
                 destfile = trainImgs)
   trainLabs <- paste(where,'/train-labels-idx1-ubyte.gz',sep='')
-  download.file('http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz',
+  utils::download.file('http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz',
                 destfile = trainLabs)
   testImgs <- paste(where,'/t10k-images-idx3-ubyte.gz',sep='')
-  download.file('http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz',
+  utils::download.file('http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz',
                 destfile = testImgs)
   testLabs <- paste(where,'/t10k-labels-idx1-ubyte.gz',sep='')
-  download.file('http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz',
+  utils::download.file('http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz',
                 destfile = testLabs)
   # Unzip the downloaded files
   R.utils::gunzip(trainImgs)
