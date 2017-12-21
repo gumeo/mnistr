@@ -34,5 +34,5 @@ environment with the functions to train the network, forwards propagate and
 }
 \examples{
 testMLP <- mlp(c(10,10,10),5,mnistr::reLU,TRUE,1000)
-testLayer$W$getter() # Check random weights
+testMLP$network[[1]]$W$getter() # Check random weights
 }

@@ -226,7 +226,7 @@ Layer <- function(activation, minibatchSize,sizeP,is_input=FALSE,is_output=FALSE
 #'
 #' @examples
 #' testMLP <- mlp(c(10,10,10),5,mnistr::reLU,TRUE,1000)
-#' testLayer$W$getter() # Check random weights
+#' testMLP$network[[1]]$W$getter() # Check random weights
 #' @export
 mlp <- function(structNet, minibatchSize,activation, initPos =FALSE, initScale=100){
   num_layers <- length(structNet)
