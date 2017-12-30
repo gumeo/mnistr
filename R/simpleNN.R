@@ -255,6 +255,11 @@ mlp <- function(structNet, minibatchSize,activation, initPos =FALSE, initScale=1
   
   backwards_prop <- function(yhat,labels){
     layers[[num_layers]]$D$setter(t(yhat-labels))
+    # Special case when we have no hidden layers
+    val <- num_layers-1
+    if(val < 2){
+      return()
+    }
     for(i in (num_layers-1):2){
       W_nobias <- layers[[i]]$W$getter()
       W_nobias <- W_nobias[1:(nrow(W_nobias)-1),]
